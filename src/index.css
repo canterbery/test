@@ -3,8 +3,10 @@ body {
   margin: 20px;
 }
 
-ol, ul {
+ol,
+ul {
   padding-left: 30px;
+  padding-inline-start: 10px;
 }
 
 .board-row:after {
@@ -35,6 +37,9 @@ ol, ul {
 .square:focus {
   outline: none;
 }
+.square.winner {
+  background-color: deepskyblue;
+}
 
 .kbd-navigation .square:focus {
   background: #ddd;
@@ -42,9 +47,12 @@ ol, ul {
 
 .game {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .game-info {
-  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
 }
