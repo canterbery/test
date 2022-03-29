@@ -1,5 +1,5 @@
-function calculateWinner(squares) {
-  let gameResult = { winner: null, winningLine: null, isDraw: null };
+function getGameState(squares) {
+  let result = { winner: null, winningLine: null, isDraw: null };
 
   const lines = [
     [0, 1, 2],
@@ -14,16 +14,16 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      gameResult.winner = squares[a];
-      gameResult.winningLine = lines[i];
-      return gameResult;
+      result.winner = squares[a];
+      result.winningLine = lines[i];
+      return result;
     }
   }
   if (squares.every((elem) => !(elem === null))) {
-    gameResult.isDraw = true;
-    return gameResult;
+    result.isDraw = true;
+    return result;
   }
-  return gameResult;
+  return result;
 }
 
-export default calculateWinner;
+export default getGameState;
