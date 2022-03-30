@@ -1,5 +1,5 @@
 function getGameState(squares) {
-  let result = { winner: null, winningLine: null, isDraw: null };
+  let result = { winner: "", winningLine: [], isDraw: false };
 
   const lines = [
     [0, 1, 2],
